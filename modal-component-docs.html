@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal HTML Component Documentation</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    section,
+    pre {
+      background: #ffffff;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #0f172a;
+    }
+
+    .hero {
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-bottom: 24px;
+    }
+
+    .card {
+      padding: 24px;
+    }
+
+    .code-block {
+      padding: 24px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    .callout {
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      margin-top: 24px;
+      background: #eff6ff;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #dbe3ef;
+      text-align: left;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="tag">Fake Documentation</span>
+      <h1>Modal HTML Component</h1>
+      <p>
+        The modal HTML component displays focused content in an overlay above the current page.
+        It is useful for confirmations, lightweight forms, announcements, and any interaction that
+        should temporarily capture attention without leaving the current view.
+      </p>
+      <div class="callout">
+        <strong>When to use it:</strong> Use the modal for short, self-contained tasks. Avoid placing
+        long multi-step flows inside a modal when a dedicated page would be clearer.
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Key features</h2>
+        <ul>
+          <li>Centered overlay layout with a visually separated dialog surface</li>
+          <li>Header, content, and actions regions for predictable structure</li>
+          <li>Backdrop support for dimming background content</li>
+          <li>Optional dismiss and primary action buttons</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Recommended behavior</h2>
+        <ul>
+          <li>Open the modal from a clear trigger such as a button or link</li>
+          <li>Move keyboard focus into the modal when it opens</li>
+          <li>Return focus to the triggering element when it closes</li>
+          <li>Support closing via an explicit close action and the Escape key</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Example markup</h2>
+      <pre class="code-block"><code>&lt;div class="modal-backdrop" hidden&gt;
+  &lt;div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"&gt;
+    &lt;div class="modal__header"&gt;
+      &lt;h2 id="modal-title"&gt;Delete item&lt;/h2&gt;
+      &lt;button type="button" aria-label="Close modal"&gt;&times;&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="modal__body"&gt;
+      &lt;p&gt;Are you sure you want to delete this item? This action cannot be undone.&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="modal__actions"&gt;
+      &lt;button type="button"&gt;Cancel&lt;/button&gt;
+      &lt;button type="button"&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>API overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.modal-backdrop</code></td>
+            <td>Provides the full-screen overlay behind the dialog.</td>
+          </tr>
+          <tr>
+            <td><code>.modal</code></td>
+            <td>Wraps the visible dialog surface and main content.</td>
+          </tr>
+          <tr>
+            <td><code>.modal__header</code></td>
+            <td>Contains the title and optional close action.</td>
+          </tr>
+          <tr>
+            <td><code>.modal__body</code></td>
+            <td>Holds descriptive text, forms, or other focused content.</td>
+          </tr>
+          <tr>
+            <td><code>.modal__actions</code></td>
+            <td>Groups confirmation and dismissal buttons.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
